@@ -1,4 +1,4 @@
-package uk.co.chrisjenx.calligraphy;
+package uk.co.chrisjenx.calligraphy3;
 
 import android.content.Context;
 import android.content.res.AssetManager;
@@ -97,7 +97,7 @@ public final class CalligraphyUtils {
 
     /**
      * Useful for manually fonts to a TextView. Will not default back to font
-     * set in {@link uk.co.chrisjenx.calligraphy.CalligraphyConfig}
+     * set in {@link CalligraphyConfig}
      *
      * @param context  Context
      * @param textView Not null, TextView to apply to.

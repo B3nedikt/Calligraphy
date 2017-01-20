@@ -1,4 +1,4 @@
-package uk.co.chrisjenx.calligraphy;
+package uk.co.chrisjenx.calligraphy3;
 
 import android.graphics.Typeface;
 
@@ -8,7 +8,7 @@ import android.graphics.Typeface;
  *     <li>Implementing this interface. You should only implements {@link #setTypeface(Typeface)} method.</li>
  *     <li>Or via reflection. If custom view already has setTypeface method you can
  *     register it during Calligraphy configuration
- *     {@link uk.co.chrisjenx.calligraphy.CalligraphyConfig.Builder#addCustomViewWithSetTypeface(Class)}</li>
+ *     {@link CalligraphyConfig.Builder#addCustomViewWithSetTypeface(Class)}</li>
  * </ul>
  * First way is faster but encourage more effort from the developer to implements interface. Second one
  * requires less effort but works slowly cause reflection calls.

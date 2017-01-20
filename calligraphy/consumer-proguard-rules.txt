@@ -16,6 +16,6 @@
 #   public *;
 #}
 
--keep class uk.co.chrisjenx.calligraphy.* { *; }
--keep class uk.co.chrisjenx.calligraphy.*$* { *; }
+-keep class uk.co.chrisjenx.calligraphy3.* { *; }
+-keep class uk.co.chrisjenx.calligraphy3.*$* { *; }
 

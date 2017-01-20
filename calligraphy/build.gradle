@@ -21,6 +21,7 @@ android {
 }
 
 dependencies {
+    compile 'io.github.inflationx:viewpump:0.1.0-SNAPSHOT'
     compile 'com.android.support:appcompat-v7:24.0.0'
 }
 
