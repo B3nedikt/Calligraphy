@@ -7,16 +7,16 @@ import io.github.inflationx.viewpump.Interceptor;
 
 public class CalligraphyInterceptor implements Interceptor {
 
-    private final CalligraphyFactory calligraphyFactory;
+    private final Calligraphy calligraphy;
 
     public CalligraphyInterceptor(CalligraphyConfig calligraphyConfig) {
-        this.calligraphyFactory = new CalligraphyFactory(calligraphyConfig);
+        this.calligraphy = new Calligraphy(calligraphyConfig);
     }
 
     @Override
     public InflateResult intercept(Chain chain) {
         InflateResult result = chain.proceed(chain.request());
-        View viewWithTypeface = calligraphyFactory.onViewCreated(result.view(), result.context(), result.attrs());
+        View viewWithTypeface = calligraphy.onViewCreated(result.view(), result.context(), result.attrs());
         return result.toBuilder().view(viewWithTypeface).build();
     }
 }

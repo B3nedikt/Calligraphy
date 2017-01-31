@@ -17,7 +17,7 @@ import java.lang.reflect.Method;
 
 import io.github.inflationx.viewpump.ReflectionUtils;
 
-class CalligraphyFactory {
+class Calligraphy {
 
     private static final String ACTION_BAR_TITLE = "action_bar_title";
     private static final String ACTION_BAR_SUBTITLE = "action_bar_subtitle";
@@ -99,7 +99,7 @@ class CalligraphyFactory {
     private final CalligraphyConfig mCalligraphyConfig;
     private final int[] mAttributeId;
 
-    public CalligraphyFactory(CalligraphyConfig calligraphyConfig) {
+    public Calligraphy(CalligraphyConfig calligraphyConfig) {
         mCalligraphyConfig = calligraphyConfig;
         this.mAttributeId = new int[]{calligraphyConfig.getAttrId()};
     }
@@ -209,14 +209,14 @@ class CalligraphyFactory {
 
         static String BLANK = " ";
 
-        private final WeakReference<CalligraphyFactory> mCalligraphyFactory;
+        private final WeakReference<Calligraphy> mCalligraphyFactory;
         private final WeakReference<Context> mContextRef;
         private final WeakReference<Toolbar> mToolbarReference;
         private final CharSequence originalSubTitle;
 
-        private ToolbarLayoutListener(final CalligraphyFactory calligraphyFactory,
+        private ToolbarLayoutListener(final Calligraphy calligraphy,
                                       final Context context, Toolbar toolbar) {
-            mCalligraphyFactory = new WeakReference<>(calligraphyFactory);
+            mCalligraphyFactory = new WeakReference<>(calligraphy);
             mContextRef = new WeakReference<>(context);
             mToolbarReference = new WeakReference<>(toolbar);
             originalSubTitle = toolbar.getSubtitle();
@@ -227,7 +227,7 @@ class CalligraphyFactory {
         @Override public void onGlobalLayout() {
             final Toolbar toolbar = mToolbarReference.get();
             final Context context = mContextRef.get();
-            final CalligraphyFactory factory = mCalligraphyFactory.get();
+            final Calligraphy factory = mCalligraphyFactory.get();
             if (toolbar == null) return;
             if (factory == null || context == null) {
                 removeSelf(toolbar);
