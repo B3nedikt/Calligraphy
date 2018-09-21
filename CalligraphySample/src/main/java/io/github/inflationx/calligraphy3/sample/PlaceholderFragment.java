@@ -1,15 +1,17 @@
 package io.github.inflationx.calligraphy3.sample;
 
-import android.app.AlertDialog;
+
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -32,10 +34,10 @@ public class PlaceholderFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
 
-        ViewStub stub = ButterKnife.findById(view, R.id.stub);
+        ViewStub stub = view.findViewById(R.id.stub);
         stub.inflate();
 
-        ViewStub stubWithFontPath = ButterKnife.findById(view, R.id.stub_with_font_path);
+        ViewStub stubWithFontPath = view.findViewById(R.id.stub_with_font_path);
         stubWithFontPath.inflate();
     }
 

@@ -1,28 +1,23 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
   repositories {
+    google()
     jcenter()
   }
   dependencies {
-    classpath 'com.android.tools.build:gradle:2.2.1'
+    classpath 'com.android.tools.build:gradle:3.2.1'
   }
 }
 
 allprojects {
   repositories {
+    google()
     mavenLocal()
     jcenter()
-    maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
   }
   // Is Release Build?
-  version = getProperty('VERSION_NAME');
+  version = getProperty('VERSION_NAME')
   ext {
     isReleaseVersion = has("release")
     versionCodeInt = getProperty('VERSION_CODE').toInteger()
   }
-}
-
-task wrapper(type: Wrapper) {
-  gradleVersion = '3.3'
-  distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
 }

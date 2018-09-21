@@ -17,6 +17,15 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import androidx.appcompat.widget.AppCompatAutoCompleteTextView;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatCheckBox;
+import androidx.appcompat.widget.AppCompatCheckedTextView;
+import androidx.appcompat.widget.AppCompatEditText;
+import androidx.appcompat.widget.AppCompatMultiAutoCompleteTextView;
+import androidx.appcompat.widget.AppCompatRadioButton;
+import androidx.appcompat.widget.AppCompatTextView;
+
 /**
  * Created by chris on 20/12/2013
  * Project: Calligraphy
@@ -50,14 +59,14 @@ public class CalligraphyConfig {
      * this adds those classes to the style lookup map
      */
     private static void addAppCompatViews() {
-        DEFAULT_STYLES.put(android.support.v7.widget.AppCompatTextView.class, android.R.attr.textViewStyle);
-        DEFAULT_STYLES.put(android.support.v7.widget.AppCompatButton.class, android.R.attr.buttonStyle);
-        DEFAULT_STYLES.put(android.support.v7.widget.AppCompatEditText.class, android.R.attr.editTextStyle);
-        DEFAULT_STYLES.put(android.support.v7.widget.AppCompatAutoCompleteTextView.class, android.R.attr.autoCompleteTextViewStyle);
-        DEFAULT_STYLES.put(android.support.v7.widget.AppCompatMultiAutoCompleteTextView.class, android.R.attr.autoCompleteTextViewStyle);
-        DEFAULT_STYLES.put(android.support.v7.widget.AppCompatCheckBox.class, android.R.attr.checkboxStyle);
-        DEFAULT_STYLES.put(android.support.v7.widget.AppCompatRadioButton.class, android.R.attr.radioButtonStyle);
-        DEFAULT_STYLES.put(android.support.v7.widget.AppCompatCheckedTextView.class, android.R.attr.checkedTextViewStyle);
+        DEFAULT_STYLES.put(AppCompatTextView.class, android.R.attr.textViewStyle);
+        DEFAULT_STYLES.put(AppCompatButton.class, android.R.attr.buttonStyle);
+        DEFAULT_STYLES.put(AppCompatEditText.class, android.R.attr.editTextStyle);
+        DEFAULT_STYLES.put(AppCompatAutoCompleteTextView.class, android.R.attr.autoCompleteTextViewStyle);
+        DEFAULT_STYLES.put(AppCompatMultiAutoCompleteTextView.class, android.R.attr.autoCompleteTextViewStyle);
+        DEFAULT_STYLES.put(AppCompatCheckBox.class, android.R.attr.checkboxStyle);
+        DEFAULT_STYLES.put(AppCompatRadioButton.class, android.R.attr.radioButtonStyle);
+        DEFAULT_STYLES.put(AppCompatCheckedTextView.class, android.R.attr.checkedTextViewStyle);
     }
 
     /**
