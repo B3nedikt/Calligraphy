@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.1.0 (28/01/2019)
+- **BREAKING CHANGE** Project migrated to [AndroidX](https://developer.android.com/jetpack/androidx/). See the [class and package mappings](https://developer.android.com/jetpack/androidx/migrate) for help migrating
+- Added support for resolving theme attributes used for fontPath on views
+
 ## 3.0.0 (05/01/2017)
 - **BREAKING CHANGE** This library has been refactored into a [ViewPump](https://github.com/InflationX/ViewPump) interceptor 
 
