@@ -32,7 +32,13 @@ public final class TypefaceUtils {
         synchronized (sCachedFonts) {
             try {
                 if (!sCachedFonts.containsKey(filePath)) {
-                    final Typeface typeface = Typeface.createFromAsset(assetManager, filePath);
+                    final Typeface typeface;
+                    if (filePath.startsWith("/")) {
+                        // Absolute path, so load from that file path
+                        typeface = Typeface.createFromFile(filePath);
+                    } else {
+                        typeface = Typeface.createFromAsset(assetManager, filePath);
+                    }
                     sCachedFonts.put(filePath, typeface);
                     return typeface;
                 }
