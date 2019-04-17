@@ -18,6 +18,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'consumer-proguard-rules.txt'
         }
     }
+
+    lintOptions {
+        // we don't always want to use the latest version of the support library
+        disable 'GradleDependency'
+        textOutput 'stdout'
+        textReport System.getenv('CI') == 'true'
+    }
 }
 
 dependencies {

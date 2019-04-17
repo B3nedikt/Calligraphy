@@ -21,6 +21,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+
+    lintOptions {
+        disable 'GoogleAppIndexingWarning', 'GradleDependency'
+        textOutput 'stdout'
+        textReport System.getenv('CI') == 'true'
+    }
 }
 
 dependencies {
