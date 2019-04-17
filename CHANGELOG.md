@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.1.1 (16/04/2019)
+- Use custom reflection utils rather than depend on ViewPump internals
+- Added support for loading a font from an absolute path
+
 ## 3.1.0 (28/01/2019)
 - **BREAKING CHANGE** Project migrated to [AndroidX](https://developer.android.com/jetpack/androidx/). See the [class and package mappings](https://developer.android.com/jetpack/androidx/migrate) for help migrating
 - Added support for resolving theme attributes used for fontPath on views
