@@ -1,9 +1,7 @@
-Calligraphy
+Calligraphy 4.0.0
 ===========
 
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Calligraphy-blue.svg?style=flat)](http://android-arsenal.com/details/1/163)
-
-Custom fonts in Android an OK way.
+Legacy library for custom fonts for android. If possible do not use this library its outdated!
 
 Are you fed up of Custom Views to set fonts? Or traversing the ViewTree to find TextViews? Yeah me too.
 
@@ -13,12 +11,18 @@ Are you fed up of Custom Views to set fonts? Or traversing the ViewTree to find 
 
 ### Dependency
 
-Include the dependency [Download (.aar)](http://search.maven.org/remotecontent?filepath=io/github/inflationx/calligraphy3/3.0.0/calligraphy3-3.0.0.aar) as well as the [ViewPump](https://github.com/InflationX/ViewPump) library:
+Include the dependency as well as the [ViewPump](https://github.com/B3nedikt/ViewPump) library:
 
 ```groovy
 dependencies {
-    implementation 'io.github.inflationx:calligraphy3:3.1.1'
-    implementation 'io.github.inflationx:viewpump:2.0.3'
+    // Legacy lib for custom fonts
+    implementation 'dev.b3nedikt.calligraphy:4.0.0'
+
+    // AndroidX compatibility
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+
+    // Intercept view inflation
+    implementation 'dev.b3nedikt.viewpump:viewpump:4.0.5'
 }
 ```
 ### Add Fonts
@@ -45,13 +49,19 @@ Define your default font using `CalligraphyConfig`, in your `Application` class 
 @Override
 public void onCreate() {
     super.onCreate();
-    ViewPump.init(ViewPump.builder()
-        .addInterceptor(new CalligraphyInterceptor(
-                new CalligraphyConfig.Builder()
-                    .setDefaultFontPath("fonts/Roboto-RobotoRegular.ttf")
-                    .setFontAttrId(R.attr.fontPath)
-                    .build()))
-        .build());
+        ViewPump.init(new CalligraphyInterceptor(
+                        new CalligraphyConfig.Builder()
+                                .setDefaultFontPath("fonts/Roboto-ThinItalic.ttf")
+                                .setFontAttrId(R.attr.fontPath)
+                                .setFontMapper(new FontMapper() {
+                                    @Override
+                                    public String map(String font) {
+                                        return font;
+                                    }
+                                })
+                                .addCustomViewWithSetTypeface(CustomViewWithTypefaceSupport.class)
+                                .addCustomStyle(TextField.class, R.attr.textFieldStyle)
+                                .build()));
     //....
 }
 ```

@@ -1,19 +1,19 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion "28.0.3"
+    compileSdkVersion 30
 
     defaultConfig {
         applicationId "io.github.inflationx.calligraphy3.sample"
         minSdkVersion 14
-        targetSdkVersion 28
-        versionCode project.ext.versionCodeInt
-        versionName version
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1"
     }
     buildTypes {
         debug {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
         release {
@@ -21,18 +21,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
-
-    lintOptions {
-        disable 'GoogleAppIndexingWarning', 'GradleDependency'
-        textOutput 'stdout'
-        textReport System.getenv('CI') == 'true'
-    }
 }
 
 dependencies {
     implementation project(':calligraphy')
-    implementation 'io.github.inflationx:viewpump:1.0.0'
-    implementation 'androidx.appcompat:appcompat:1.0.2'
+
+    implementation 'dev.b3nedikt.viewpump:viewpump:4.0.5'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
 
     implementation 'com.jakewharton:butterknife:9.0.0-rc1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc1'

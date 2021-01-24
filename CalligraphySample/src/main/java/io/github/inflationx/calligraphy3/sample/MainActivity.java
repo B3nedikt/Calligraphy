@@ -1,16 +1,30 @@
 package io.github.inflationx.calligraphy3.sample;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.app.ViewPumpAppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
-import io.github.inflationx.viewpump.ViewPumpContextWrapper;
-
 
 public class MainActivity extends AppCompatActivity {
+
+    private AppCompatDelegate appCompatDelegate = null;
+
+    @NonNull
+    @Override
+    public AppCompatDelegate getDelegate() {
+        if (appCompatDelegate == null) {
+            appCompatDelegate = new ViewPumpAppCompatDelegate(
+                    super.getDelegate(),
+                    this
+            );
+        }
+        return appCompatDelegate;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,19 +63,4 @@ public class MainActivity extends AppCompatActivity {
             }
         }, 3000);
     }
-
-    /*
-        Uncomment if you disable PrivateFactory injection. See ViewPumpConfig#setPrivateFactoryInjectionEnabled(boolean)
-     */
-//    @Override
-//    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-//    public View onCreateView(View parent, String name, @NonNull Context context, @NonNull AttributeSet attrs) {
-//        return ViewPumpContextWrapper.onActivityCreateView(this, parent, super.onCreateView(parent, name, context, attrs), name, context, attrs);
-//    }
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
-    }
-
 }

@@ -1,0 +1,24 @@
+ext {
+    bintrayRepo = 'Calligraphy'
+    bintrayName = 'Calligraphy'
+
+    publishedGroupId = 'dev.b3nedikt.calligraphy'
+    artifactId = 'calligraphy'
+    libraryVersion = '4.0.0'
+
+    libraryName = 'Calligraphy'
+    libraryDescription = 'Legacy android library for custom fonts'
+    siteUrl = 'https://github.com/B3nedikt/calligraphy'
+    gitUrl = 'https://github.com/B3nedikt/calligraphy.git'
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+
+    developerId = 'b3nedikt'
+    developerName = 'Benedikt Löbbecke'
+    developerEmail = 'mail@b3nedikt.dev'
+    organization = 'b3nedikt.dev'
+}
+
+apply from: 'install.gradle'
+apply from: 'bintray.gradle'

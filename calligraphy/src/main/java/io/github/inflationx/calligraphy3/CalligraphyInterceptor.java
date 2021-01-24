@@ -2,8 +2,10 @@ package io.github.inflationx.calligraphy3;
 
 import android.view.View;
 
-import io.github.inflationx.viewpump.InflateResult;
-import io.github.inflationx.viewpump.Interceptor;
+import org.jetbrains.annotations.NotNull;
+
+import dev.b3nedikt.viewpump.InflateResult;
+import dev.b3nedikt.viewpump.Interceptor;
 
 public class CalligraphyInterceptor implements Interceptor {
 
@@ -13,10 +15,20 @@ public class CalligraphyInterceptor implements Interceptor {
         this.calligraphy = new Calligraphy(calligraphyConfig);
     }
 
+    @NotNull
     @Override
     public InflateResult intercept(Chain chain) {
         InflateResult result = chain.proceed(chain.request());
-        View viewWithTypeface = calligraphy.onViewCreated(result.view(), result.context(), result.attrs());
-        return result.toBuilder().view(viewWithTypeface).build();
+
+        View viewWithTypeface = calligraphy.onViewCreated(
+                result.getView(), result.getContext(), result.getAttrs()
+        );
+
+        return new InflateResult(
+                viewWithTypeface,
+                result.getName(),
+                result.getContext(),
+                result.getAttrs()
+        );
     }
 }
