@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "io.github.inflationx.calligraphy3.sample"
-        minSdkVersion 14
+        minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
         versionName "1"
@@ -29,8 +29,8 @@ dependencies {
     implementation 'dev.b3nedikt.viewpump:viewpump:4.0.5'
     implementation 'androidx.appcompat:appcompat:1.2.0'
 
-    implementation 'com.jakewharton:butterknife:9.0.0-rc1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc1'
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
 
     debugImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.2'
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.2'

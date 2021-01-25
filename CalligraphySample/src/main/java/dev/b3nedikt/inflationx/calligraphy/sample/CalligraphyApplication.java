@@ -1,11 +1,11 @@
-package io.github.inflationx.calligraphy3.sample;
+package dev.b3nedikt.inflationx.calligraphy.sample;
 
 import android.app.Application;
 
 import dev.b3nedikt.viewpump.ViewPump;
-import io.github.inflationx.calligraphy3.CalligraphyConfig;
-import io.github.inflationx.calligraphy3.CalligraphyInterceptor;
-import io.github.inflationx.calligraphy3.FontMapper;
+import dev.b3nedikt.calligraphy.CalligraphyConfig;
+import dev.b3nedikt.calligraphy.CalligraphyInterceptor;
+import dev.b3nedikt.calligraphy.FontMapper;
 
 /**
  * Created by chris on 06/05/2014.

@@ -1,4 +1,4 @@
-package io.github.inflationx.calligraphy3.sample;
+package dev.b3nedikt.inflationx.calligraphy.sample;
 
 import android.os.Bundle;
 import android.os.Handler;

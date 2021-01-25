@@ -1,4 +1,4 @@
-Calligraphy 4.0.0
+Calligraphy 4.0.1
 ===========
 
 Legacy library for custom fonts for android. If possible do not use this library its outdated!
@@ -16,7 +16,7 @@ Include the dependency as well as the [ViewPump](https://github.com/B3nedikt/Vie
 ```groovy
 dependencies {
     // Legacy lib for custom fonts
-    implementation 'dev.b3nedikt.calligraphy:4.0.0'
+    implementation 'dev.b3nedikt.calligraphy:4.0.1'
 
     // AndroidX compatibility
     implementation 'androidx.appcompat:appcompat:1.2.0'

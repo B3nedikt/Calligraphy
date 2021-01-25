@@ -1,4 +1,4 @@
-package io.github.inflationx.calligraphy3.sample;
+package dev.b3nedikt.inflationx.calligraphy.sample;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
@@ -15,7 +15,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import io.github.inflationx.calligraphy3.TypefaceUtils;
+import dev.b3nedikt.calligraphy.TypefaceUtils;
 import java.io.File;
 import java.util.Random;
 

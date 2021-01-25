@@ -1,4 +1,4 @@
-package io.github.inflationx.calligraphy3.sample;
+package dev.b3nedikt.inflationx.calligraphy.sample;
 
 import android.annotation.TargetApi;
 import android.content.Context;

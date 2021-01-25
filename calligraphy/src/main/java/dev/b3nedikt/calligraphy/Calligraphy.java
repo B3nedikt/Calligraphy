@@ -1,4 +1,4 @@
-package io.github.inflationx.calligraphy3;
+package dev.b3nedikt.calligraphy;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -15,6 +15,8 @@ import java.lang.ref.WeakReference;
 import java.lang.reflect.Method;
 
 import androidx.appcompat.widget.Toolbar;
+
+import dev.b3nedikt.inflationx.calligraphy.R;
 
 class Calligraphy {
 

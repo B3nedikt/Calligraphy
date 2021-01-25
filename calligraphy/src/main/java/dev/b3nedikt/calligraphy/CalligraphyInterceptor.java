@@ -1,4 +1,4 @@
-package io.github.inflationx.calligraphy3;
+package dev.b3nedikt.calligraphy;
 
 import android.view.View;
 
