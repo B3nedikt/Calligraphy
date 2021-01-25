@@ -4,7 +4,7 @@ ext {
 
     publishedGroupId = 'dev.b3nedikt.calligraphy'
     artifactId = 'calligraphy'
-    libraryVersion = '4.0.1'
+    libraryVersion = '4.0.2'
 
     libraryName = 'Calligraphy'
     libraryDescription = 'Legacy android library for custom fonts'

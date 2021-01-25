@@ -1,4 +1,4 @@
-package dev.b3nedikt.inflationx.calligraphy.sample;
+package dev.b3nedikt.calligraphy.sample;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;

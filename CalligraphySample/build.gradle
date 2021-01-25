@@ -5,7 +5,7 @@ android {
     compileSdkVersion 30
 
     defaultConfig {
-        applicationId "io.github.inflationx.calligraphy3.sample"
+        applicationId "dev.b3nedikt.calligraphy.sample"
         minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
@@ -20,6 +20,11 @@ android {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 

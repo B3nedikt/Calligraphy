@@ -28,8 +28,6 @@ import androidx.appcompat.widget.AppCompatMultiAutoCompleteTextView;
 import androidx.appcompat.widget.AppCompatRadioButton;
 import androidx.appcompat.widget.AppCompatTextView;
 
-import dev.b3nedikt.inflationx.calligraphy.R;
-
 /**
  * Created by chris on 20/12/2013
  * Project: Calligraphy

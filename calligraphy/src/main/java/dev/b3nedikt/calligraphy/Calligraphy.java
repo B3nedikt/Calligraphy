@@ -16,8 +16,6 @@ import java.lang.reflect.Method;
 
 import androidx.appcompat.widget.Toolbar;
 
-import dev.b3nedikt.inflationx.calligraphy.R;
-
 class Calligraphy {
 
     private static final String ACTION_BAR_TITLE = "action_bar_title";
