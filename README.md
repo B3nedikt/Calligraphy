@@ -71,12 +71,26 @@ no default font and use the default attribute of `R.attr.fontPath`._
 
 ### Inject into Context
 
-Wrap the `Activity` Context:
+Add the following to your base activitiy:
 
 ```java
-@Override
-protected void attachBaseContext(Context newBase) {
-    super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
+public class MainActivity extends AppCompatActivity {
+
+    private AppCompatDelegate appCompatDelegate = null;
+
+    ...
+
+    @NonNull
+    @Override
+    public AppCompatDelegate getDelegate() {
+        if (appCompatDelegate == null) {
+            appCompatDelegate = new ViewPumpAppCompatDelegate(
+                    super.getDelegate(),
+                    this
+            );
+        }
+        return appCompatDelegate;
+    }
 }
 ```
 
